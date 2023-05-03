@@ -1,8 +1,8 @@
-header {
+.profileSection {
   height: 520px; 
   width: 100vw; 
-  background-color: #958ecb;
-  background-image: url("http://www.transparenttextures.com/patterns/beige-paper.png");
+  background-color: #d9d9d9;
+  background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
 }
 
 .userIcon {

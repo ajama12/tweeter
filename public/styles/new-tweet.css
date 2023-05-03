@@ -1,38 +1,41 @@
-.new-tweet > h2 {
-  color: #545149;
-  margin: 1rem 0;
-}
-
 form {
-  display: flex;
+  display: flex; 
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  align-items: flex-start;
 }
 
-label {
-  font-weight: bold;
-  border-bottom: solid 5px #545149;
-  height: 2.5rem;
-  margin-bottom: 1rem;
+.type {
+  width: 90vw;
+  background-color: #f4f1ec;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  outline: none;
+  resize: none;
+  border-bottom: 0.20em solid #545149;
+  font-family: "Source Sans Pro";
 }
 
-.button-counter {
+.submission {
+  width: 90vw;
   display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center;
+  font-family: Bungee;
 }
 
 button {
-  font-family: 'Bungee', cursive;
-  background-color: #8b26f1;
+  background-color: #4056A1;
+  border: 0px;
   color: #FFFFFF;
-  padding: 0.5rem;
+  padding: 0.15em;
+  margin: 0.75em 0em;
 }
 
 .counter {
-  font-family: 'Bungee', cursive;
-  color: #545149;
+  padding: 0.15em;
+  margin: 0.75em 0em;
 }
 
 .counter.negative {
