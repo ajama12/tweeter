@@ -1,6 +1,7 @@
 .tweet-container {
   border: 0.2em solid #545149;
   padding: 1em;
+  margin-bottom: 1em;
   display: flex;
   flex-direction: column;
 }
@@ -15,6 +16,13 @@
   justify-content: space-between;
 }
 
+.left-tweet-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 .tweetInfo {
   display: flex; 
   flex-direction: row; 
@@ -23,6 +31,7 @@
   padding: 0.75em;
   font-family: "Source Sans Pro"; 
   font-weight: bold;
+  text-align: left;
 }
 
 .userId {
