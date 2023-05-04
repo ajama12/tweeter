@@ -5,8 +5,6 @@
  */
 
 $(document).ready(() => {
-
-  let start = Date.now();
   
   //make template
     const createTweetElement = (tweet) => {
@@ -44,17 +42,16 @@ $(document).ready(() => {
   //make tweetbox for tweet
     const renderTweets = (data) => {
       tweetsContainer.empty();
-      console.log("Date.now", Date.now() - start);
   
       data.forEach((tweet) => {
         tweetsContainer.append(createTweetElement(tweet));
       });
     };
   
-    const area = $("#tweet-text");
+    const textArea = $("#tweet-text");
   
   //submit tweet
-    const submitNewTweet = (area) => {
+    const submitNewTweet = (textArea) => {
       const config = {
         method: "POST",
         url: "/tweets",
@@ -62,7 +59,7 @@ $(document).ready(() => {
         success: (tweet) => {
           console.log("Successfully submitted tweet!", tweet);
           loadTweet();
-          area.val("");
+          textArea.val("");
         },
         error: (error) => {
           console.log("Error", error);
@@ -74,8 +71,15 @@ $(document).ready(() => {
   //submit new tweet
     $("form").submit((event) => {
       event.preventDefault();
-      submitTweet(area);
-      console.log(start);
+      if (textArea.val() === null || textArea.val() === "") {
+        return alert("Sorry, please enter text to tweet! ");
+      } else if (textArea.val().length > 140) {
+        return alert("Sorry, this tweet is too long!");
+      } else if (textArea.val().trim() === "") {
+        return alert("Sorry, your tweet can't be blank!");
+      } else {
+        submitNewTweet(textArea);
+      }
     });
   
   //render tweets into boxes
