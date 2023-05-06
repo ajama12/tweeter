@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -17,7 +18,8 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css"/>
-
+    <link rel="stylesheet" href="/styles/desktop.css" type="text/css"/>
+    
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -36,34 +38,37 @@
         <i class="fa-sharp fa-solid fa-angles-down"></i>
       </div> 
     </nav>
-    <header class="profileSection">
-      <div class="userIcon">
-        <div class="verticalIcon">
-          <img src="/images/profile-hex.png"> 
-          <h2>Asma Jama</h2>
+    <div id="bodyContainer">
+      <header class="profileSection">
+        <div class="userIcon">
+          <div class="verticalIcon">
+            <img src="/images/profile-hex.png"> 
+            <h2>Asma Jama</h2>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
 
     <!-- Page-specific (main) content here -->
-    <main>
-      <section class="new-tweet">
-        <header>
-          <p class="error"></p>
-        </header>
-        <form method="POST" action="/tweets/">
-          <label for="tweet-text">
-            <strong class="prompt">What are you humming about?</strong>
-          </label>
-          <textarea class="type" name="text" id="tweet-text"></textarea>
-          <div class="submission">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text"><strong>140</strong></output>
-          </div>
-        </form>
-      </section>
-      <article class="tweets-container">
-      </article>
-    </main>
+    <div id="contentContainer"> 
+      <main>
+          <section class="new-tweet">
+            <header class="errorContainer">
+            </header>
+            <form method="POST" action="/tweets/">
+              <label for="tweet-text">
+                <strong class="prompt">What are you humming about?</strong>
+              </label>
+              <textarea class="type" name="text" id="tweet-text"></textarea>
+              <div class="submission">
+                <button type="submit">Tweet</button>
+                <output name="counter" class="counter" for="tweet-text"><strong>140</strong></output>
+              </div>
+            </form>
+          </section>
+          <article class="tweets-container">
+          </article>
+        </main>
+      </div> 
+    </div>
   </body>
 </html>

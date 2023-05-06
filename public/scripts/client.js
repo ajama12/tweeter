@@ -73,17 +73,32 @@ $(document).ready(() => {
       $.ajax(config);
     };
   
+    const newErrorMsg = (message) => {
+      return `
+        <p class="error">
+          <i class="fa-solid fa-triangle-exclamation"></i></span>
+          <span class="message">${message}</span>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </p>
+      `;
+    };
+
   //submit new tweet
     $("form").submit((event) => {
       event.preventDefault();
       if (textArea.val() === null || textArea.val() === "") {
-        return alert("Sorry, please enter text to tweet! ");
+        const errorMsg = newErrorMsg("Sorry, please enter text to tweet!");
+      $(".errorContainer").html(errorMsg).slideDown();
       } else if (textArea.val().length > 140) {
-        return alert("Sorry, this tweet is too long!");
+        const errorMsg = newErrorMsg("Sorry, this tweet is too long!");
+      $(".errorContainer").html(errorMsg).slideDown();
       } else if (textArea.val().trim() === "") {
-        return alert("Sorry, your tweet can't be blank!");
+        const errorMsg = newErrorMsg("Sorry, your tweet can't be blank!");
+      $(".errorContainer").html(errorMsg).slideDown();
       } else {
+        $(".errorContainer").hide();
         submitNewTweet(textArea);
+        $(".counter").val(140);
       }
     });
   
