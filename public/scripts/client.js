@@ -8,6 +8,11 @@ $(document).ready(() => {
   
   //make template
     const createTweetElement = (tweet) => {
+      const escape = function (str) {
+        let div = document.createElement("div");
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+      };  
       return `
       <div class="tweet-container">
         <header class="tweet-header"> 
@@ -22,7 +27,7 @@ $(document).ready(() => {
           </span>
         </header>
         <p class="tweetInfo">
-          ${tweet.content.text}
+        ${escape(tweet.content.text)}
         </p>
         <footer class="tweet-footer">
           <span class="date">
@@ -42,7 +47,7 @@ $(document).ready(() => {
   //make tweetbox for tweet
     const renderTweets = (data) => {
       tweetsContainer.empty();
-  
+      data.reverse();
       data.forEach((tweet) => {
         tweetsContainer.append(createTweetElement(tweet));
       });
