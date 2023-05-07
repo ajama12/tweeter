@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(() => {
+  //Create new tweet 
   const createTweetElement = (tweet) => {
     const escape = function (str) {
       let div = document.createElement("div");
@@ -43,6 +44,7 @@ $(document).ready(() => {
 
   const tweetsContainer = $(".tweets-container");
 
+  // Render tweets in reverse chronological order
   const renderTweets = (data) => {
     tweetsContainer.empty();
     data.reverse();
@@ -51,19 +53,21 @@ $(document).ready(() => {
     });
   };
 
-  const showError = (errorMessage) => {
-    const errorMsg = `
-      <p class="error">
-        <i class="fa-solid fa-triangle-exclamation"></i></span>
-        <span class="message">${errorMessage}</span>
-        <i class="fa-solid fa-triangle-exclamation"></i>
-      </p>
-    `;
-    $(".errorContainer").html(errorMsg).slideDown();
 
-    setTimeout(() => {
+  // Function to handle error messages, either showing or hiding them, based on the showError parameter
+  const handleErrorMessage = (errorMessage, showError) => {
+    if (showError) {
+      const errorMsg = `
+        <p class="error">
+          <i class="fa-solid fa-triangle-exclamation"></i></span>
+          <span class="message">${errorMessage}</span>
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </p>
+      `;
+      $(".errorContainer").html(errorMsg).slideDown();
+    } else {
       $(".errorContainer").slideUp();
-    }, 5000);
+    }
   };
 
   $("form").submit((event) => {
@@ -74,9 +78,12 @@ $(document).ready(() => {
 
     if (tweetText === "" || tweetText.length > 140) {
       const errorMessage = tweetText === "" ? "Sorry, your tweet can't be blank!" : "Sorry, your tweet is over 140 characters!";
-      showError(errorMessage);
+      handleErrorMessage(errorMessage, true);
       return;
     }
+
+    // Clear error message if the tweet text passes validation
+    handleErrorMessage("", false);
 
     const config = {
       method: "POST",
