@@ -5,10 +5,10 @@ Tweeter is a simple, single-page Twitter clone.
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
 ## Screenshots
-!["Full screen main page"](https://github.com/ajama12/tweeter/blob/master/docs/main-screen.png?raw=true)
-!["Smaller screen main page"](https://github.com/ajama12/tweeter/blob/master/docs/mobile-screen.png?raw=true)
-!["Blank tweet error"](https://github.com/ajama12/tweeter/blob/master/docs/blank-tweet.png?raw=true)
-!["Tweet too long error"](https://github.com/ajama12/tweeter/blob/master/docs/long-tweet.png?raw=true)
+!["Full screen main page"](https://github.com/ajama12/tweeter/blob/master/docs/main-page.png?raw=true)
+!["Smaller screen main page"](https://github.com/ajama12/tweeter/blob/master/docs/small-page.png?raw=true)
+!["Blank tweet error"](https://github.com/ajama12/tweeter/blob/master/docs/blank.png?raw=true)
+!["Tweet too long error"](https://github.com/ajama12/tweeter/blob/master/docs/too-long.png?raw=true)
 
 
 ## Getting Started
